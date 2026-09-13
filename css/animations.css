@@ -1,0 +1,170 @@
+/* ==========================================================================
+   ANIMATIONS CSS — PRANAVANATHAN M PORTFOLIO
+   High-end futuristic keyframes and micro-interactions
+   ========================================================================== */
+
+/* Status Dot Pulse */
+@keyframes pulse-dot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* Center Node Core Breathing Glow */
+@keyframes pulse-center {
+  0%, 100% {
+    box-shadow: 0 0 35px rgba(0, 229, 255, 0.4), inset 0 0 20px rgba(0, 229, 255, 0.25);
+    border-color: rgba(0, 229, 255, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 55px rgba(0, 229, 255, 0.65), inset 0 0 30px rgba(56, 189, 248, 0.45);
+    border-color: #FFFFFF;
+  }
+}
+
+/* Orbit Node Gentle Floating */
+@keyframes float-node {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.orbit-node:nth-child(2n) {
+  animation: float-node 5s ease-in-out infinite;
+}
+
+.orbit-node:nth-child(2n+1) {
+  animation: float-node 6s ease-in-out infinite 1s;
+}
+
+/* Data Flow Stroke Dash Animation */
+@keyframes data-flow {
+  from {
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.data-flow-line {
+  stroke-dasharray: 4, 8;
+  animation: data-flow 1.5s linear infinite;
+}
+
+/* Ambient Radial Glow Drifting */
+@keyframes glow-drift-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, 30px) scale(1.08);
+  }
+}
+
+@keyframes glow-drift-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-30px, -40px) scale(1.12);
+  }
+}
+
+.ambient-glow-1 {
+  animation: glow-drift-1 14s ease-in-out infinite;
+}
+
+.ambient-glow-2 {
+  animation: glow-drift-2 18s ease-in-out infinite;
+}
+
+/* Holographic Card Sheen */
+.holographic-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.holographic-sheen::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 60%
+  );
+  transform: rotate(25deg) translateY(-100%);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+
+.holographic-sheen:hover::after {
+  transform: rotate(25deg) translateY(100%);
+}
+
+/* Typewriter Cursor Blink */
+@keyframes blink-caret {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background-color: var(--accent-cyan);
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink-caret 0.9s infinite;
+}
+
+/* Sequential Pipeline Glowing Wave */
+@keyframes pipeline-glow {
+  0% {
+    border-color: var(--border-subtle);
+    box-shadow: none;
+    color: var(--text-secondary);
+  }
+  30% {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+    color: #FFFFFF;
+    background: rgba(0, 229, 255, 0.1);
+  }
+  100% {
+    border-color: var(--border-subtle);
+    box-shadow: none;
+    color: var(--text-secondary);
+  }
+}
+
+/* Terminal Scanline */
+.scanline-effect {
+  position: relative;
+}
+
+.scanline-effect::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 2;
+  background-size: 100% 3px, 4px 100%;
+  pointer-events: none;
+  opacity: 0.6;
+}

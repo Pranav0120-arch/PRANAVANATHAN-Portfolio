@@ -2079,3 +2079,271 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* --------------------------------------------------------------------------
+   PROJECT PREVIEW THUMBNAILS & MOCKUPS
+   -------------------------------------------------------------------------- */
+.project-preview-banner {
+  margin-bottom: 1.25rem;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #060913;
+}
+
+.project-preview-mockup {
+  padding: 0.85rem 1rem;
+}
+
+.mockup-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 0.75rem;
+}
+
+.mockup-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #EF4444; }
+.dot-yellow { background: #F59E0B; }
+.dot-green { background: #10B981; }
+
+.mockup-title {
+  margin-left: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.mockup-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.mockup-metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+}
+
+.mockup-metric-label {
+  color: var(--text-muted);
+}
+
+.mockup-metric-val {
+  font-weight: 600;
+}
+
+.mockup-metric-val.green {
+  color: var(--accent-emerald);
+}
+
+.mockup-metric-val.cyan {
+  color: var(--accent-cyan);
+}
+
+.mockup-waveform {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 24px;
+  margin-top: 0.4rem;
+  padding-top: 2px;
+}
+
+.mockup-waveform .bar {
+  flex: 1;
+  background: var(--accent-cyan);
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.mockup-waveform .bar.alert {
+  background: #EF4444;
+  opacity: 1;
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.8);
+}
+
+.mockup-code-peek {
+  margin-top: 0.35rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.mockup-code-peek code {
+  font-family: var(--font-mono);
+  font-size: 0.675rem;
+  color: #38BDF8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   ATLASSIAN SOLUTIONS — ANIMATED STEP DIAGRAMS
+   -------------------------------------------------------------------------- */
+.solution-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.solution-summary {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.diagram-flow-container {
+  background: rgba(6, 9, 19, 0.65);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.diagram-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 580px;
+}
+
+.diagram-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  max-width: 140px;
+  position: relative;
+}
+
+.step-num {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.05em;
+}
+
+.step-node {
+  padding: 0.5rem 0.75rem;
+  background: rgba(13, 21, 38, 0.9);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.step-node:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 6px 16px rgba(0, 229, 255, 0.25);
+}
+
+.step-icon {
+  font-size: 0.85rem;
+}
+
+.step-text {
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+.diagram-step.highlight .step-node {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.5);
+  color: #34D399;
+}
+
+.diagram-step.highlight .step-num {
+  color: var(--accent-emerald);
+}
+
+.diagram-connector {
+  flex: 0 0 32px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  position: relative;
+  margin: 0 4px;
+  margin-bottom: 2rem; /* Align horizontally with step-node */
+}
+
+/* --------------------------------------------------------------------------
+   AI LAB 5-CARD EXPANDED GRID
+   -------------------------------------------------------------------------- */
+.lab-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-blue-bright);
+  margin-top: 0.25rem;
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.75rem;
+}
+
+@media (max-width: 768px) {
+  .diagram-flow {
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    gap: 1rem;
+  }
+  .diagram-step {
+    max-width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    text-align: left;
+  }
+  .step-node {
+    flex-shrink: 0;
+  }
+  .step-text {
+    margin-top: 0.2rem;
+  }
+  .diagram-connector {
+    width: 2px;
+    height: 20px;
+    margin: 0 auto;
+    margin-bottom: 0;
+  }
+  .connector-pulse {
+    width: 2px;
+    height: 10px;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

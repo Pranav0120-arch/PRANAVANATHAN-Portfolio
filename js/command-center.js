@@ -1,6 +1,7 @@
 /**
  * ATLASSIAN COMMAND CENTER — Futuristic Enterprise Control Station
  * Interactive modules for Jira Cloud, JSM, Confluence, Automation & Reporting.
+ * Strictly aligned with enterprise engineering & administration requirements.
  */
 
 const COMMAND_MODULES = {
@@ -10,54 +11,63 @@ const COMMAND_MODULES = {
     status: 'Cloud Engine: Nominal',
     items: [
       {
-        title: 'Projects & Schemes',
-        desc: 'Company-managed vs Team-managed project architectures with standardized scheme hierarchies.',
-        inspect: `SCHEME MAPPING ARCHITECTURE:
-- Permission Schemes: Role-based matrix (Admins, Leads, Developers, Viewers)
-- Issue Type Schemes: Epic -> Story / Task / Bug -> Sub-task hierarchy
-- Notification Schemes: Event-driven alerts with webhook bypass to reduce inbox noise
-- Field Configuration: Required fields, custom validation guards & hidden fields`
+        title: 'Projects',
+        desc: 'Company-managed vs Team-managed project architectures with governance standards.',
+        inspect: `PROJECT ARCHITECTURE & GOVERNANCE:
+- Project Types: Software (Scrum/Kanban), Service Management, Business Workflows
+- Architecture: Standardized Company-managed schemes for audit compliance
+- Project Lead Segregation: Granular project administrator permissions without site-wide elevation
+- Key Engagements: Led HCL Syneos Cloud architecture transition across 7 projects`
       },
       {
-        title: 'Workflows & Statuses',
+        title: 'Issues',
+        desc: 'Issue type hierarchies, parent-child links, and custom issue properties.',
+        inspect: `ISSUE HIERARCHY & TAXONOMY:
+- Issue Levels: Initiative -> Epic -> Story / Task / Bug -> Sub-task
+- Security Schemes: Issue-level security levels restricting confidential compliance tickets
+- Linking Models: "Blocks", "Relates to", "Cloned by" with automated validation triggers
+- Custom Metadata: JSON entity properties synced bi-directionally via Forge REST APIs`
+      },
+      {
+        title: 'Workflows',
         desc: 'Multi-step transition loops, post-functions, validators, and conditional routing.',
         inspect: `WORKFLOW PIPELINE SPECIFICATION:
-[Backlog] -> (Validator: Story Points > 0) -> [Selected for Dev]
-[In Progress] -> (Post-Function: Set Assignee + Start Timer) -> [In Review]
-[In Review] -> (Condition: PR Approved) -> [Done] -> (Resolution: Done)`
+- [Backlog] -> (Validator: Story Points > 0 & FixVersion set) -> [Selected for Dev]
+- [In Progress] -> (Post-Function: Set Assignee + Start SLA Timer) -> [In Review]
+- [In Review] -> (Condition: Git PR Approved + Code Scan Passed) -> [QA Staging]
+- [QA Staging] -> (Validator: QA Signoff Checkbox checked) -> [Done]
+- Result: Enforces automated quality gates and zero status skipping`
       },
       {
-        title: 'Screens & Custom Fields',
+        title: 'Screens',
         desc: 'Optimized screen schemes for Create, Edit, and View issue operations.',
-        inspect: `CUSTOM FIELD TAXONOMY:
-- SLA Breach Indicator (Calculated DateTime)
-- Target Environment (Select List: Staging, Production)
+        inspect: `SCREEN SCHEME CONFIGURATION:
+- Create Screen: Minimal essential fields (Summary, Component, Priority, Description)
+- Edit Screen: Contextual tabs (Technical Details, QA Verification, Environment)
+- View Screen: Dynamic tab layout with embedded Atlassian Forge velocity widgets
+- Screen Schemes: Mapped by Issue Type (e.g. Bug screen requires "Steps to Reproduce")`
+      },
+      {
+        title: 'Fields',
+        desc: 'Custom field configurations, contexts, required fields, and renderer mappings.',
+        inspect: `FIELD CONFIGURATION TAXONOMY:
+- SLA Breach Indicator (Calculated DateTime Smart Field)
+- Target Environment (Select List: Dev, Staging, Production)
 - Business Impact Score (Numerical 1-10 with threshold alerting)
-- Automated Test Link (Forge REST sync link)`
+- Automated Test Link (RESTful link synced from deployment pipeline)
+- Context Isolation: Custom fields scoped specifically to relevant projects to avoid global schema bloat`
       },
       {
-        title: 'Cloud-to-Cloud Migration',
-        desc: '7-scheme structural migration from Team-managed to Company-managed platforms.',
-        inspect: `MIGRATION AUDIT CHECKS:
-1. Verified 100% user account mapping across Atlassian Access
-2. Retained custom field IDs and historical change-logs
-3. Validated active REST API webhooks and ScriptRunner listeners
-4. Zero downtime cutover with post-migration automated integrity audits`
-      },
-      {
-        title: 'Issue Types & Hierarchies',
-        desc: 'Structured parent-child dependencies and cross-project release portfolios.',
-        inspect: `HIERARCHY CONFIGURATION:
-Initiative (Cross-dept) -> Epic (Deliverable) -> Story (Feature) -> Sub-task (Atomic Unit)
-Enforced via JQL constraints and automated parent status rollup.`
-      },
-      {
-        title: 'Global Security & Access',
-        desc: 'Atlassian Guard (Access) single sign-on, 2FA enforcement, and SCIM directory sync.',
-        inspect: `SECURITY PROTOCOLS:
-- SCIM synchronization with enterprise IdP
-- IP allowlisting for administrative endpoints
-- Granular project admin vs site admin segregation of duties`
+        title: 'Schemes',
+        desc: 'Auditing 7 core schemes: Permission, Issue Type, Notification, Workflow, Screen, Field, Security.',
+        inspect: `7 CORE SCHEME MIGRATION & AUDITING:
+1. Permission Scheme: Role-based matrix (Admins, Dev Leads, Engineers, Viewers)
+2. Issue Type Scheme: Standardized across cross-functional engineering pods
+3. Notification Scheme: Event-driven alerts with webhook bypass to eliminate spam
+4. Workflow Scheme: Unified transitions across all active sprints
+5. Screen Scheme: Tailored field displays per issue type
+6. Field Configuration Scheme: Required field enforcement & wiki style renderers
+7. Issue Security Scheme: Confidential data protection for production incidents`
       }
     ]
   },
@@ -68,45 +78,49 @@ Enforced via JQL constraints and automated parent status rollup.`
     status: 'ITSM Engine: Online',
     items: [
       {
-        title: 'Request Types & Portals',
-        desc: 'Intuitive customer service portals with dynamic cascading fields.',
-        inspect: `PORTAL DESIGN:
-- Incident Report (Automated severity triage + P1 escalation)
-- Hardware / Software Request (Approval workflow with manager signoff)
-- Access Request (Auto-provisioning via webhook integration)`
+        title: 'Request Types',
+        desc: 'Customer-facing portals with dynamic fields, help center groups, and hidden mappings.',
+        inspect: `REQUEST TYPE MAPPINGS:
+- P1 Incident Escalation: Maps to "Incident" issue type, sets Priority = Highest
+- System Access Request: Multi-level approval (Manager + Security Owner)
+- Infrastructure Change: CAB review required before status transition
+- Portal Grouping: Categorized by IT Services, Hardware, Software, and Access Provisioning`
       },
       {
-        title: 'Queues & Triage',
-        desc: 'Role-based queues sorted by urgency, SLA countdown, and expertise.',
-        inspect: `QUEUE JQL LOGIC:
-Queue: "Urgent P1/P2 Unassigned"
-JQL: project = "ITSM" AND priority in (High, Highest) AND assignee is EMPTY ORDER BY created ASC`
+        title: 'Queues',
+        desc: 'Role-based queues sorted by urgency, SLA countdown, and engineer availability.',
+        inspect: `TRIAGE QUEUE ARCHITECTURE:
+- Queue 1: "Urgent P1/P2 Unassigned" (JQL: priority in (High, Highest) AND assignee is EMPTY)
+- Queue 2: "SLA Warning < 60 mins" (JQL: "Time to resolution" <= remaining("60m") AND statusCategory != Done)
+- Queue 3: "Waiting on Third-Party Support" (JQL: status = "Pending Vendor")
+- Dynamic Sorting: Auto-ranked by closest SLA breach timestamp`
       },
       {
-        title: 'SLA Calculations',
-        desc: 'Multi-calendar SLA timers with pause conditions and automated warning alerts.',
-        inspect: `SLA METRICS CONFIGURATION:
-- Time to first response: Target < 15 mins (Business hours: 9AM - 6PM IST)
-- Time to resolution: Target < 4 hours (P1: 24/7 calendar clock)
-- Pause condition: Status = "Waiting for customer" or "Waiting for vendor"`
+        title: 'SLAs',
+        desc: 'Multi-calendar SLA timers with pause conditions and automated escalation alerts.',
+        inspect: `SLA METRICS SPECIFICATION:
+- Time to First Response: Target < 15 mins (Business hours: 9:00 AM - 6:00 PM IST)
+- Time to Resolution: Target < 4 hours (P1: 24/7 calendar clock)
+- Pause Conditions: Status = "Waiting for customer" OR "Waiting for vendor"
+- Breach Prevention: Automated webhook alert to Slack war-room when SLA drops under 20% remaining`
       },
       {
-        title: 'ITSM Incident Management',
-        desc: 'Major incident response command with automated Slack/Teams bridge.',
-        inspect: `INCIDENT WORKFLOW:
-Investigation -> Major Incident Declared -> War Room Bridge Initialized -> Mitigation -> Post-Incident Review (PIR in Confluence)`
+        title: 'Workflows',
+        desc: 'ITIL/ITSM-compliant request lifecycles from submission to validation and resolution.',
+        inspect: `JSM WORKFLOW ENGINE:
+[Submitted] -> (Automated Queue Routing) -> [Under Triage]
+[Under Triage] -> (Assignee Claimed) -> [Work In Progress]
+[Work In Progress] -> (Customer Input Required: SLA Clock Pauses) -> [Waiting for Customer]
+[Work In Progress] -> (Fix Verified) -> [Resolved] -> (CSAT Triggered)`
       },
       {
-        title: 'Change Enablement',
-        desc: 'Risk assessment scoring models and CAB approval workflows.',
-        inspect: `CHANGE ADVISORY BOARD (CAB):
-Automated risk scoring based on impacted services, rollback strategy availability, and maintenance window scheduling.`
-      },
-      {
-        title: 'Customer Satisfaction (CSAT)',
-        desc: 'Post-resolution automated surveys and trending satisfaction dashboards.',
-        inspect: `CSAT BENCHMARK:
-Automated 1-click survey trigger on issue resolution. Target CSAT > 94.5% with mandatory follow-up on ratings <= 2.`
+        title: 'Customer Requests',
+        desc: 'Self-service portal experience, automated confirmation emails, and customer feedback.',
+        inspect: `CUSTOMER REQUEST LIFECYCLE:
+- Portal Ingestion: Intuitive web form with dynamic cascading dropdowns
+- Confluence KB Deflection: Displays relevant documentation articles as user types
+- Feedback Loop: Automated 1-click CSAT survey upon ticket resolution (Target > 94.5%)
+- Organization Mapping: Customer domain auto-associations for shared company tickets`
       }
     ]
   },
@@ -117,43 +131,39 @@ Automated 1-click survey trigger on issue resolution. Target CSAT > 94.5% with m
     status: 'Knowledge Base: Synchronized',
     items: [
       {
-        title: 'Space Architectures',
-        desc: 'Structured global spaces for Engineering, ITSM, and Executive Operations.',
-        inspect: `SPACE TAXONOMY:
-- ENG-CORE: Engineering design docs, API specs & architecture diagrams
+        title: 'Pages',
+        desc: 'Structured page layouts, dynamic Jira macros, status macros, and interactive code blocks.',
+        inspect: `CONFLUENCE PAGE ARCHITECTURE:
+- Page Hierarchies: Modular nested page trees with parent summary tables
+- Dynamic Macros: {jira:jqlQuery=project = 'ENG' AND fixVersion = 'v2.4'}
+- Real-Time Status: Embedded live sprint burndowns and roadmap timeline gadgets
+- Standardized Labels: Systematic tags enabling federated workspace searches`
+      },
+      {
+        title: 'Spaces',
+        desc: 'Global space governance for Engineering, ITSM operations, and executive documentation.',
+        inspect: `SPACE TAXONOMY & GOVERNANCE:
+- ENG-CORE: Technical design docs, REST API specifications & architecture diagrams
 - IT-KB: Public customer self-help articles & troubleshooting runbooks
-- OPS-RUNBOOKS: L2/L3 infrastructure recovery procedures`
+- OPS-INCIDENTS: Post-incident reviews (PIR) and disaster recovery runbooks
+- Space Permissions: Fine-grained anonymous customer read vs internal engineering write permissions`
       },
       {
-        title: 'Knowledge Base & Self-Service',
-        desc: 'AI-assisted customer search integration linking JSM portal with Confluence articles.',
-        inspect: `SELF-SERVICE DEFLECTION:
-Articles tagged with smart keywords deflect up to 35% of incoming support requests before ticket creation.`
+        title: 'Documentation',
+        desc: 'Standard operating procedures (SOPs), system runbooks, and API specifications.',
+        inspect: `SYSTEM RUNBOOK STANDARDIZATION:
+- Disaster Recovery Runbooks: Step-by-step failover procedures with contact matrices
+- API Reference Guides: Endpoint schemas, authorization headers, and sample payloads
+- Environment Setup: Local developer onboarding guides with one-line shell commands`
       },
       {
-        title: 'Standardized Blueprints',
-        desc: 'Custom page templates with variables for retrospectives, sprint planning, and post-mortems.',
-        inspect: `TEMPLATE BLUEPRINTS:
-- Post-Mortem Incident Template (Root Cause, Timeline, Preventative Actions)
-- Architecture Decision Record (ADR) (Context, Options, Decision, Consequences)`
-      },
-      {
-        title: 'Jira Integration Macros',
-        desc: 'Dynamic Jira issue filters, sprint status charts, and roadmaps embedded directly in pages.',
-        inspect: `EMBEDDED MACROS:
-{jira:jqlQuery=project = 'ENG' AND fixVersion = 'v2.4' | columns=key,summary,status,assignee}`
-      },
-      {
-        title: 'Permissions & Space Schemes',
-        desc: 'Granular view/edit permissions, anonymous customer portal access, and page restrictions.',
-        inspect: `GOVERNANCE SCHEMES:
-Strict restriction models preventing accidental public exposure of confidential internal APIs and customer data.`
-      },
-      {
-        title: 'Audit & Content Lifecycle',
-        desc: 'Automated archival of outdated documentation and periodic review verification.',
-        inspect: `LIFECYCLE AUDITING:
-Pages unmodified for > 180 days automatically trigger a Slack reminder to the page owner for content verification.`
+        title: 'Knowledge Management',
+        desc: 'Knowledge base integration with JSM for automated article deflection and search.',
+        inspect: `KNOWLEDGE MANAGEMENT & DEFLECTION:
+- Search Integration: Directly connected to Jira Service Management portal
+- Article Deflection: Up to 35% reduction in repetitive IT tickets via smart article indexing
+- Content Lifecycle: Automated review alerts for pages unmodified for > 180 days
+- Knowledge Governance: Regular audit routines to retire superseded process documentation`
       }
     ]
   },
@@ -164,47 +174,40 @@ Pages unmodified for > 180 days automatically trigger a Slack reminder to the pa
     status: 'Rules Engine: Running',
     items: [
       {
-        title: 'Triggers & Event Handlers',
-        desc: 'Issue created, field updated, scheduled cron timers, and incoming webhook triggers.',
-        inspect: `TRIGGER EVENT:
-WHEN: Issue Created
-IN: Project = 'Software Delivery'
-TYPE: Bug`
+        title: 'Triggers',
+        desc: 'Issue created, field updated, scheduled cron timers, incoming webhooks, and ScriptRunner events.',
+        inspect: `AUTOMATION TRIGGERS:
+- Event: Issue Created / Field Value Changed (e.g. Priority changed to Highest)
+- Scheduled: Cron expression (0 0 9 ? * MON-FRI) scanning for stalled in-progress items
+- Webhook: Incoming payload trigger from GitHub PR merge or deployment pipeline
+- ScriptRunner Hook: Custom Java/Groovy event interception with sub-millisecond execution`
       },
       {
-        title: 'Smart Values & Conditions',
-        desc: 'Advanced logic parsing using {{issue.summary}}, {{now.plusDays(7)}}, and regex matches.',
-        inspect: `SMART VALUE TRANSFORMATION:
-{{#issue.comments.last}}Author: {{author.displayName}} - {{body}}{{/issue.comments.last}}
-CONDITION: {{issue.description.contains("URGENT")}} == true`
+        title: 'Conditions',
+        desc: 'Smart value matching, JQL filters, user conditions, and compare field logic.',
+        inspect: `CONDITIONAL LOGIC SPECIFICATION:
+- Smart Value Condition: {{issue.description.contains("URGENT")}} == true
+- JQL Condition: sprint in openSprints() AND "Story Points" is EMPTY
+- User Condition: Initiator is in group "site-admins" OR "dev-leads"
+- Advanced Branching: Evaluate condition across linked issues before parent state transition`
       },
       {
-        title: 'Branching & Sub-tasks',
-        desc: 'Iterating over linked issues, sub-tasks, and parent epics for synchronized status updates.',
-        inspect: `BRANCH EXECUTION:
-BRANCH: For All Sub-tasks
-IF: All sub-tasks are in status "Done"
-THEN: Transition Parent Issue to "Ready for Release"`
+        title: 'Actions',
+        desc: 'Edit field values, transition issue status, create sub-tasks, send webhooks, and log telemetry.',
+        inspect: `ACTION EXECUTION SET:
+- Status Transition: Move issue to "Ready for QA" when PR is merged
+- Field Update: Copy parent Epic FixVersion and Component to all nested child stories
+- Sub-task Generation: Auto-create QA verification and documentation sub-tasks
+- Webhook Dispatch: Send authenticated POST payload to external analytics engine`
       },
       {
-        title: 'ScriptRunner Groovy Listeners',
-        desc: 'Deep programmatic extensions overcoming native automation boundary limits.',
-        inspect: `SCRIPTRUNNER HOOK:
-Custom event listener calculating dynamic business risk formulas and executing secure external API calls.`
-      },
-      {
-        title: 'Automated Incident Triage',
-        desc: 'Auto-detecting outage keywords and assigning on-call emergency response squads.',
-        inspect: `TRIAGE RULE:
-Matches keyword "P0 / Outage" in title -> Sets Priority to Highest -> Pings Slack #war-room -> Pages lead engineer.`
-      },
-      {
-        title: 'Scheduled Audit Jobs',
-        desc: 'Weekly hygiene bots flagging stale issues and verifying sprint burndown health.',
-        inspect: `CRON AUDIT BOT:
-Cron: 0 0 9 ? * MON
-JQL: updated < -14d AND statusCategory != Done
-ACTION: Add comment "Stale issue reminder" and ping Assignee.`
+        title: 'Notifications',
+        desc: 'Slack and Microsoft Teams webhooks, customized customer emails, and lead engineer alerts.',
+        inspect: `NOTIFICATION MATRIX:
+- P1 Outage Alert: Instant rich markdown card dispatched to #engineering-incident channel
+- Daily Digest: Morning summary of approaching SLA breaches sent to engineering leads
+- Custom Customer Email: Dynamic HTML email with personalized ticket summary and direct portal link
+- Smart Value Templates: {{issue.summary}} | Reported by {{issue.reporter.displayName}}`
       }
     ]
   },
@@ -215,44 +218,44 @@ ACTION: Add comment "Stale issue reminder" and ping Assignee.`
     status: 'Analytics Engine: Ready',
     items: [
       {
-        title: 'Advanced JQL Logic',
-        desc: 'Complex multi-conditional queries utilizing nested functions and date calculations.',
-        inspect: `ADVANCED JQL SNIPPET:
-project = "CORE" AND status changed to "In Progress" AFTER -7d AND assignee was in (currentUser()) ORDER BY rank ASC`
+        title: 'JQL',
+        desc: 'Complex multi-conditional queries, nested functions, historical changelogs, and smart dates.',
+        inspect: `ADVANCED JQL SNIPPETS:
+1. Active Sprint Blockers:
+   project in (CORE, ENG) AND sprint in openSprints() AND priority in (High, Highest) AND statusCategory != Done ORDER BY rank ASC
+
+2. Stalled Tickets:
+   status changed to "In Progress" BEFORE -5d AND updated <= -3d AND statusCategory != Done
+
+3. Cross-Project SLA Risk:
+   "Time to resolution" <= remaining("2h") AND statusCategory != Done ORDER BY "Time to resolution" ASC`
       },
       {
-        title: 'Executive Dashboards',
-        desc: 'High-level real-time KPI monitors for leadership, team leads, and product owners.',
-        inspect: `DASHBOARD GADGETS:
-1. Sprint Velocity Chart (Committed vs Delivered Story Points)
-2. Cumulative Flow Diagram (CFD identifying workflow bottlenecks)
-3. SLA Compliance Meter (Target > 98.5%)`
+        title: 'Filters',
+        desc: 'Shared team filters, subscription dispatches, permissions, and gadget data feeds.',
+        inspect: `ENTERPRISE FILTER TAXONOMY:
+- FILTER_SQUAD_VELOCITY: Powers sprint planning board and committed points tracking
+- FILTER_SLA_COMPLIANCE: Evaluates rolling 30-day resolution benchmarks
+- Subscription Alerts: Scheduled daily 8:30 AM dispatch to team leads with due-today action items
+- Governance: System filters maintained with strict ownership and descriptive documentation`
       },
       {
-        title: 'Sprint Velocity Tracking',
-        desc: 'Historical delivery metrics measuring predictability and team bandwidth.',
-        inspect: `VELOCITY FORMULA:
-Velocity = Sum(Story Points of Resolved Issues within Sprint Timebox)
-Rolling 5-sprint average used for predictive sprint capacity planning.`
+        title: 'Dashboards',
+        desc: 'Executive telemetry dashboards with customized gadget layouts, burndowns, and cycle times.',
+        inspect: `EXECUTIVE DASHBOARD ARCHITECTURE:
+- Gadget 1: Sprint Health Burndown (Story points committed vs completed in real time)
+- Gadget 2: Cumulative Flow Diagram (Identifies in-progress bottlenecks and cycle time drift)
+- Gadget 3: Two-Dimensional Filter Matrix (Issue Types vs Assignees)
+- Gadget 4: SLA Resolution Gauge (Visual target compliance vs 98% enterprise threshold)`
       },
       {
-        title: 'SLA Compliance Reports',
-        desc: 'Auditing time-to-first-response and time-to-resolution breaches by service tier.',
-        inspect: `SLA TELEMETRY:
-Breach Rate: 1.2% (Well within 98% target)
-Mean Time to Resolution (MTTR): 2.4 hours for high-priority incidents.`
-      },
-      {
-        title: 'Workload & Capacity Maps',
-        desc: 'Balancing developer ticket loads to prevent burnout and ensure smooth throughput.',
-        inspect: `CAPACITY ALLOCATION:
-Visualizes unassigned work and individual developer point caps across active sprints.`
-      },
-      {
-        title: 'Filter Subscriptions & Alerts',
-        desc: 'Automated email and webhook dispatches of critical business queries on a schedule.',
-        inspect: `SUBSCRIPTION LOGIC:
-Daily 8:30 AM digest dispatching all tickets due within 24 hours directly to engineering leads.`
+        title: 'Reports',
+        desc: 'Velocity charts, burnup charts, version reports, and EazyBI advanced executive analytics.',
+        inspect: `ANALYTICS & EXECUTIVE REPORTS:
+- Velocity Report: Predictable commitment estimation across 6 consecutive sprints
+- Version Workload Report: Readiness score for quarterly production releases
+- EazyBI Custom Reports: Formulated multi-dimensional cubes tracking MTTR and engineer utilization
+- Historical Trendlines: Delivered at HCL Syneos to measure cross-functional delivery speed`
       }
     ]
   }
@@ -350,8 +353,8 @@ class CommandCenter {
 
   inspectItem(item, cardEl = null) {
     if (cardEl) {
-      this.itemsGrid.querySelectorAll('.cc-item-card').forEach((c) => c.style.borderColor = '');
-      cardEl.style.borderColor = 'var(--accent-cyan)';
+      this.itemsGrid.querySelectorAll('.cc-item-card').forEach((c) => c.classList.remove('selected'));
+      cardEl.classList.add('selected');
     }
 
     if (this.inspectorHeader) {

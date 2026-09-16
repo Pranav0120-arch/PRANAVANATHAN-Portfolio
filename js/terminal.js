@@ -113,8 +113,9 @@ class TerminalEmulator {
       // If resume command, trigger download
       if (cmd === 'resume') {
         const link = document.createElement('a');
-        link.href = 'assets/Pranavanathan_M_Resume.pdf';
+        link.href = 'assets/Pranavanathan_M_Resume.pdf?v=20260916';
         link.download = 'Pranavanathan_M_Resume.pdf';
+        link.target = '_blank';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

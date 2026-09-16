@@ -23,25 +23,26 @@ Philosophy: "Technology is more than code. It's about making work smarter."`,
   skills: `<span class="token-str">[TECHNICAL STACK & CORE PROFICIENCIES]</span>
 • Programming: Python, JavaScript (ES6+), Groovy, SQL (MySQL), Java fundamentals
 • Atlassian: Jira Cloud, Jira Software, JSM, Confluence, ScriptRunner, Jira Automation
-• AI & ML: Anomaly Detection, Supervised/Unsupervised ML, Data Preprocessing, IBM AI Suite
+• Enterprise Apps: eazyBI, Big Picture, Zephyr Scale, Structure, Xray Test Management, Advanced JQL
+• AI & ML: Anomaly Detection (+95% accuracy), Supervised/Unsupervised ML, Data Preprocessing, IBM AI Suite
 • Databases: MySQL Relational Schema Design, ACID, Query Indexing, Advanced JQL
-• Web/Tools: RESTful APIs, Webhooks, HTML5/CSS3, Atlassian Forge CLI, Git/GitHub`,
+• Web/Tools: RESTful APIs, Webhooks, HTML5/CSS3, Atlassian Forge CLI, YouTrack, Git/GitHub`,
 
   projects: `<span class="token-str">[REAL PROJECTS FROM RESUME]</span>
-1. <span class="token-fn">Real-Time Fraud Detection using AI Concepts</span> (Final Year Capstone Project)
-   - Intelligent Python ML pipeline for streaming transaction anomaly classification.
+1. <span class="token-fn">Real-Time Fraud Detection System using AI</span> (Final Year Capstone Project)
+   - Increased fraud detection by 95% by engineering an automated anomaly detection pipeline in Python.
 2. <span class="token-fn">Student Information & Academic Management System</span>
    - Full-stack web application with normalized 3NF MySQL relational database.
 3. <span class="token-fn">Atlassian Forge Custom Extensions & UI Suite</span>
    - Custom Jira Cloud extension built with Forge CLI and REST APIs.
-4. <span class="token-fn">Enterprise Cloud-to-Cloud Scheme Migration</span> (HCL Syneos & Thrive Tech)
-   - Structural migration across 7 core schemes with automated audit scripts.`,
+4. <span class="token-fn">Enterprise Cloud-to-Cloud Scheme Migration & Standardization</span>
+   - HCL Syneos & ICICI Prudential: Migration, workflow standardization, and automated audit scripts.`,
 
   atlassian: `<span class="token-str">[ATLASSIAN PLATFORM ADMINISTRATION]</span>
-• Software & Automation Engineer at Thrive Tech (reduced manual tasks by 40%).
-• Engineered ScriptRunner Groovy listeners and automated event handlers.
-• Managed enterprise cloud-to-cloud migration (Team-managed to Company-managed).
-• Designed advanced JQL filters and real-time SLA executive tracking dashboards.`,
+• Software & Automation Engineer at Thrive Tech (reduced manual administrative tasks by 40%).
+• Administered 4 core Atlassian platforms; provided L2/L3 support for configurations and workflows.
+• Enterprise Engagements: HCL Syneos & ICICI Prudential (Jira Cloud migrations & Confluence administration).
+• Built executive analytics using eazyBI and Advanced JQL to track velocity and SLA compliance.`,
 
   ai: `<span class="token-str">[AI & EMERGING TECHNOLOGY]</span>
 • Capstone: Real-time fraud detection with isolation forest and anomaly scoring.
